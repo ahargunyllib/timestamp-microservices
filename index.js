@@ -34,7 +34,8 @@ app.get("/api", function (req, res) {
 app.get("/api/:query", function (req, res) {
 	const query = !isNaN(req.params.query) ? parseInt(req.params.query) : req.params.query
 	const date = new Date(query)
-	if (date === 'Invalid Date'){
+	console.log('date: ' + date)
+	if (date == 'Invalid Date'){
 		res.json({ error : 'Invalid Date'})
 	} else {
 		const unix = date.getTime()
